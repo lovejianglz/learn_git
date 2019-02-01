@@ -1,0 +1,70 @@
+# git
+## merge
+## init
+用法：*git init* 初始化git repository
+
+## tag
+用法  *git tag*
+
+## status
+用法：*git status* 查看当前代码仓库状态
+
+## commit
+*git commit -am "message"*
+
+## congif
+用法：  
+git config --local user.name name  
+git config --local user.email email  
+--system:作用于本机  
+--global:作用于本登陆用户  
+--local:作用于本respository
+
+## diff
+用法：*git diff* 显示暂存区与工作区的差异  
+用法：*git diff [commit_id]* 显示指定提交与当前工作区的差异  
+例子：*git diff HEAD* 显示当前提交与工作区的差异  
+用法：*git diff --cached [commit_id]* 显示制定提交与当前暂存区的差异  
+例子: *git diff --cached* 最新的提交与暂存区的差异
+
+## push
+把代码推送到远程代码库 要把本地代码推送到远程，需要先PULL到本地
+
+## pull
+从远程代码库拉取代码至本地，同时会执行合并  
+pull = fetch + merge	
+
+## 添加git hub 远程仓库  
+https  
+*git remote add origin https://github.com/lovejianglz/learn_git.git* origin 是远程仓库的别名  
+ssh  
+在github中获取远程的SSH地址，在本地生成密钥 *ssh-keygen* 私钥放于.ssh文件中，把公钥配置到github中即可  
+*git push -u origin master* 把本地master的代码推送到远程  
+*git remote show* 列出与当前目录关联的所有远程仓库
+
+> \* remote origin  
+  Fetch URL: https://github.com/lovejianglz/learn_git.git  
+  Push  URL: https://github.com/lovejianglz/learn_git.git  
+  HEAD branch: master  
+  Remote branch:  
+    master tracked  
+  Local branch configured for 'git pull':  
+    master merges with remote master  
+  Local ref configured for 'git push':  
+    master pushes to master (up to date)  
+	
+* 本地分支 master 
+* 远程分支 origin/master 与远程版本库对应的分支 即远程的master
+* 远程 master  
+执行pull操作，把远程代码先pull到origin/master这个分支上，然后对本地master进行merge操作  
+执行push操作，先把origin/master指向本地master，再通过origin/master提交到远程上
+
+
+
+1. gitflow
+2. 基于Git分支的开发模型:  
+develop分支（频繁变化）  
+test分支   
+master分支  
+bugfix分支  
+https://github.com/lovejianglz/learn_git.git
