@@ -34,6 +34,7 @@ git config --local user.email email
 ### https  
 *git remote add origin https://github.com/lovejianglz/learn_git.git* origin 是远程仓库的别名  
 ### ssh  
+*git remote add origin git@github.com:lovejianglz/learn_srcapy.git* origin 是远程仓库的别名  
 在github中获取远程的SSH地址，在本地生成密钥 *ssh-keygen* 私钥放于.ssh文件中，把公钥配置到github中即可  
 *git push -u origin master* 把本地master的代码推送到远程  
 *git remote show* 列出与当前目录关联的所有远程仓库
