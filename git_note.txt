@@ -26,18 +26,14 @@ git config --local user.email email
 例子：*git diff HEAD* 显示当前提交与工作区的差异  
 用法：*git diff --cached [commit_id]* 显示制定提交与当前暂存区的差异  
 例子: *git diff --cached* 最新的提交与暂存区的差异
+## clone
+* git clone 从远程复制代码到当前目录，并以远程项目名作为文件按名
+* git clone repository-name 从远程复制代码到当前目录，以repository-name作为目录
 
-## push
-把代码推送到远程代码库 要把本地代码推送到远程，需要先PULL到本地
-
-## pull
-从远程代码库拉取代码至本地，同时会执行合并  
-pull = fetch + merge	
-
-## 添加git hub 远程仓库  
-https  
+## 添加git hub 远程仓库  	
+### https  
 *git remote add origin https://github.com/lovejianglz/learn_git.git* origin 是远程仓库的别名  
-ssh  
+### ssh  
 在github中获取远程的SSH地址，在本地生成密钥 *ssh-keygen* 私钥放于.ssh文件中，把公钥配置到github中即可  
 *git push -u origin master* 把本地master的代码推送到远程  
 *git remote show* 列出与当前目录关联的所有远程仓库
@@ -52,6 +48,13 @@ ssh
     master merges with remote master  
   Local ref configured for 'git push':  
     master pushes to master (up to date)  
+
+## push
+把代码推送到远程代码库 要把本地代码推送到远程，需要先PULL到本地
+
+## pull
+从远程代码库拉取代码至本地，同时会执行合并  
+pull = fetch + merge
 	
 * 本地分支 master 
 * 远程分支 origin/master 与远程版本库对应的分支 即远程的master
@@ -59,7 +62,7 @@ ssh
 执行pull操作，把远程代码先pull到origin/master这个分支上，然后对本地master进行merge操作  
 执行push操作，先把origin/master指向本地master，再通过origin/master提交到远程上
 
-
+fast-forward
 
 1. gitflow
 2. 基于Git分支的开发模型:  
