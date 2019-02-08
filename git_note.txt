@@ -1,16 +1,7 @@
 # git
-## merge
+
 ## init
 用法：*git init* 初始化git repository
-
-## tag
-用法  *git tag*
-
-## status
-用法：*git status* 查看当前代码仓库状态
-
-## commit
-*git commit -am "message"*
 
 ## congif
 用法：  
@@ -20,18 +11,54 @@ git config --local user.email email
 --global:作用于本登陆用户  
 --local:作用于本respository
 
+## add
+* 添加工作区中已修改的文件到缓存区
+* 标识冲突已被处理
+* 把git未追踪的文件纳入缓存区
+
+## tag
+用法  *git tag*
+
+## status
+用法：*git status* 查看当前代码仓库状态
+
+## reset
+用法：*git reset HEAD file*把file从缓存区移除
+
+## stash
+*git stash*暂存当前工作区的变化  
+*git stash pop*恢复之前暂存的工作区  
+*git stash show*
+
+## commit
+*git commit -am "message"* 提交修改
+
+## branch
+*git branch branch_name* 创建一个分支
+
+## checkout
+*git chechkout branch_name* 切换到branch_name分支
+*git checkout -- file*  取消file在当前工作区的修改
+
 ## diff
-用法：*git diff* 显示暂存区与工作区的差异  
+用法：*git diff* 显示缓存区与工作区的差异  
 用法：*git diff [commit_id]* 显示指定提交与当前工作区的差异  
 例子：*git diff HEAD* 显示当前提交与工作区的差异  
 用法：*git diff --cached [commit_id]* 显示制定提交与当前暂存区的差异  
 例子: *git diff --cached* 最新的提交与暂存区的差异
+
+## merge
+*git merge branch_name*合并目标分支到当前分支
+
+## rm
+*git rm --cache file* 取消文件file追踪
+
 ## clone
 * git clone 从远程复制代码到当前目录，并以远程项目名作为文件按名
 * git clone repository-name 从远程复制代码到当前目录，以repository-name作为目录
 
 ## 添加git hub 远程仓库  	
-### https  
+### https
 *git remote add origin https://github.com/lovejianglz/learn_git.git* origin 是远程仓库的别名  
 ### ssh  
 *git remote add origin git@github.com:lovejianglz/learn_srcapy.git* origin 是远程仓库的别名  
