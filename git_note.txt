@@ -99,3 +99,14 @@ test分支
 master分支  
 bugfix分支  
 https://github.com/lovejianglz/learn_git.git
+
+## 删除历史提交记录中的某个文件的记录
+# 目标文件从本地删除，并清空与这个文件有关的历史和tag，注意：此命令会删除文件。baidu.sh 可以是文件，也可以是路径 
+git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch baidu.sh' --prune-empty --tag-name-filter cat -- --all 
+# 增加文件到 .gitignore echo baidu.sh >> .gitignore 
+git add .gitignore 
+git commit -m "baidu.sh to .gitignore" 
+# 将之前步骤在本地仓库所做的修改提交到远程仓库上去 
+git push origin --force --all 
+# 对tags的操作push到远程仓库，如果你之前没有对仓库做过添加tag操作，那么这步可以跳过 
+git push origin --force --tags
